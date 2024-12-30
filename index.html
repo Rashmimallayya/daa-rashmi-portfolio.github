@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Rashmi Mathapati Portfolio</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
+    
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.min.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <link rel="stylesheet" href="css/aos.css">
+
+    <link rel="stylesheet" href="css/ionicons.min.css">
+    
+    <link rel="stylesheet" href="css/flaticon.css">
+    <link rel="stylesheet" href="css/icomoon.css">
+    <link rel="stylesheet" href="css/style.css">
+
+
+
+<style>
+
+/*======================================
+//--//-->   My portfolio
+======================================*/
+
+.My portfolio-mf .box-shadow-full {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.My portfolio-mf .My portfolio-img {
+  margin-bottom: 2rem;
+}
+
+.My portfolio-mf .My portfolio-img img {
+  margin-left: 10px;
+}
+
+
+.skill-mf .progress {
+  /* background-color: #cde1f8; */
+  margin: .5rem 0 1.2rem 0;
+  border-radius: 0;
+  height: .7rem;
+}
+
+.skill-mf .progress .progress-bar {
+  height: .7rem;
+  background-color: #ffbd39;
+}
+
+
+/* Animation styles */
+#typing-animation {
+  position: relative;
+  font-size: 30px;
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 3s steps(20, end) infinite;
+}
+
+#typing-animation:before {
+  content: "";
+  /* position: absolute; */
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #ccc;
+  animation: typing-cursor 0.5s ease-in-out infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes typing-cursor {
+  from {
+    width: 5px;
+  }
+  to {
+    width: 0;
+  }
+}
+
+
+/* project image zoom effect */
+
+.zoom-effect {
+  overflow: hidden;
+  transition: transform 0.3s ease-out;
+}
+
+.zoom-effect:hover {
+  transform: scale(1.1);
+}
+
+
+</style>
+
+
+  </head>
+  <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+	  
+	  
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
+	    <div class="container">
+	      <a class="navbar-brand" href="index.html">Rashmi Mathapati</a>
+	      <button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav nav ml-auto">
+	          <li class="nav-item"><a href="#home" class="nav-link"><span>Home</span></a></li>
+	          <li class="nav-item"><a href="#My Portfolio" class="nav-link"><span>My Portfolio</span></a></li>
+	          <li class="nav-item"><a href="#Course Reflection" class="nav-link"><span>Course Reflection</span></a></li>
+	          <li class="nav-item"><a href="#Team information" class="nav-link"><span>Team information</span></a></li>
+	          <li class="nav-item"><a href="#Project overview" class="nav-link"><span>Project overview</span></a></li>
+			  <li class="nav-item"><a href="#Bussiness models" class="nav-link"><span>Bussiness Models</span></a></li>
+	          <li class="nav-item"><a href="#Project Reflection" class="nav-link"><span>Project Reflection</span></a></li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+	  
+
+
+
+
+
+	  
+	  <section id="home-section" class="hero">
+		  <div class="home-slider  owl-carousel">
+	       <div class="slider-item ">
+	      	<div class="overlay"></div>
+	         <div class="container">
+	          <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">
+	          	<div class="one-third js-fullheight order-md-last img" style="background-image:url(images/bg_1.jpg);">
+	          	 <div class="overlay"></div>
+	          	</div>
+		          <div class="one-forth d-flex  align-items-center ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+		          	<div class="text">
+		          		<span class="subheading">Hello!</span>
+			            <h1 class="mb-4 mt-3">I'm <span>Rashmi Mathapati</span></h1>
+
+						<!-- Element to contain animated typing -->
+						<span id="typing-animation"></span>
+
+						<script>
+
+						// Initialize the typing animation
+						const typingAnimationElement = document.getElementById('typing-animation');
+
+						// Create an array of typing text
+						const typingTexts = [
+						'Ahmad nagar  ',
+						'smart city  ',
+						
+						];
+
+						// Create a function to display the typing animation for a given text
+						function playTypingAnimation(text) {
+						// Loop through each character and add it to the element
+						for (let i = 0; i < text.length; i++) {
+							setTimeout(() => {
+							typingAnimationElement.textContent += text[i];
+							}, i * 200); // Increase the delay to slow down the typing animation
+						}
+
+						// Once the animation is complete, reset the text and start over
+						setTimeout(() => {
+							typingAnimationElement.textContent = '';
+							playTypingAnimation(typingTexts[(typingTexts.indexOf(text) + 1) % typingTexts.length]);
+						}, text.length * 200);
+						}
+
+						// Start the typing animation loop
+						playTypingAnimation(typingTexts[0]);
+
+						</script>
+
+						<br>
+						<br>
+			            <h2>Overview of smart city design project</h2>
+						<!-- <h2 class="d-flex" style="margin-bottom: 0">With over 5 years of experience</h2> -->
+						<!-- <br> -->
+			            
+		            </div>
+		          </div>
+	        	</div>
+	        </div>
+	      </div>
+		</div>
+    </section>
+
+
+    <section id="My Portfolio">
+    <section class="ftco-My portfolio img ftco-section ftco-no-pb" id="My portfolio">
+    	<div class="container">
+			<div class="row">
+				<div class="row d-flex align-items-stretch">
+				<!-- <div class="row d-flex"> -->
+					<div class="col-md-6 col-lg-5 d-flex">
+						<div class="img-My portfolio img d-flex align-items-stretch">
+							<div class="overlay">
+								<div class="row">
+									<div class="col-sm-6 col-md-5">
+									  <div class="My portfolio-img">
+										<img src="images/My portfolio-me.png" class="img-fluid rounded b-shadow-a" alt="">
+									  </div>
+									</div>
+									<!-- Details next to profile image -->
+									<div class="col-sm-6 col-md-7">
+									  <div class="My portfolio-info">
+										<p><span class="title-s">Name: </span> <span>Rashmi Mathapati</span></p>
+                                        <p><span class="title-s">course instructor: </span> <span>Arudati mam</span></p>
+										<p><span class="title-s">USN: </span> <span>01FE23BCS300</span></p>
+										<p><span class="title-s">Subjiect: </span> <span>Design analysis and algorithms</span></p>
+										<p><span class="title-s">Roll no : </span> <span>419</span></p>
+										<p><span class="title-s">Division : </span> <span>'D'</span></p>
+									  </div>
+									</div>
+								  </div>
+
+								<div class="skill-mf">
+									<!-- <p class="title-s">Skills</p>
+									<span>SQL</span> <span class="pull-right">95%</span>
+									<div class="progress">
+										<div class="progress-bar" role="progressbar" style="width: 95%;" aria-valuenow="95" aria-valuemin="0"
+											aria-valuemax="100"></div>
+									</div>
+									
+									<span>PYTHON</span> <span class="pull-right">85%</span>
+									<div class="progress">
+										<div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0"
+											aria-valuemax="100"></div>
+									</div>
+									
+									<span>Data Visualization</span> <span class="pull-right">90%</span>
+									<div class="progress">
+										<div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0"
+											aria-valuemax="100"></div>
+									</div>
+									
+									<span>Statistical Analysis</span> <span class="pull-right">85%</span>
+									<div class="progress">
+										<div class="progress-bar" role="progressbar" style="width: 85%" aria-valuenow="85" aria-valuemin="0"
+											aria-valuemax="100"></div>
+									</div> -->
+									
+									<!-- <span>Machine Learning</span> <span class="pull-right">80%</span> -->
+									<div class="progress">
+										<div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0"
+											aria-valuemax="100"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
+						<div class="row justify-content-start pb-3">
+							<div class="col-md-12 heading-section ftco-animate">
+								
+								<h1 class="big">My portfolio</h1>
+								<h2 class="mb-4">My portfolio Me</h2>
+								
+			<p>"I am Rashmi Mallayya Mathapati, a student of Computer Science Engineering, currently pursuing my undergraduate studies at KLE Technological University. I am passionate about problem-solving, and some of my hobbies include writing short stories, reading novels, and watching dramas. The purpose of creating this portfolio is to document and keep track of the work I have done throughout this semester, highlighting the skills I have developed and the projects I have worked on.</p>
+								<ul class="My portfolio-info mt-4 px-md-0 px-2">
+									
+								</ul>
+							</div>
+						</div>
+
+
+							<div class="text">
+								<p class="mb-4">
+									<span class="number" data-number="30">0</span> <span>+</span>
+									<span>&nbsp; Team information completed</span>
+								</p>
+								<p><a href="https://www.linkedin.com/in/rashmi-mathapati-98b881311?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="btn btn-primary py-3 px-3">LinkedIn</a></p>
+								<p><a href="https://github.com/Rashmimallayya" class="btn btn-primary py-3 px-3">Github</a></p>
+								<p><a href="https://www.instagram.com/rashmimathapati346?igsh=MWtjOWFndDJwajR5YQ==" class="btn btn-primary py-3 px-3">Intagram</a></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+    </section>					<div class="counter-wrap ftco-animate d-flex mt-md-3">
+	
+
+
+
+        <section id="Course Reflection">
+    <!-- <section class="ftco-section ftco-no-pb" id="Course Reflection"> -->
+    	<div class="container">
+    		<div class="row justify-content-center pb-5">
+          <div class="col-md-10 heading-section text-center ftco-animate">
+          	<h1 class="big big-2">Course Reflection</h1>
+            <h2 class="mb-4">Course Reflection</h2>
+			<h3 class="mb-4">Introduction to Data Structures and Algorithms</h3>
+            <p>
+				This course explores the design, analysis, and application of algorithms, emphasizing the role of data structures in optimizing performance. Learners will develop skills to create efficient solutions for complex problems, bridging theory with real-world applications. A foundational step toward mastering computer science, this course is key for tackling challenges in software, AI, and big data.</p>
+				<div class="topics-main"></div>
+                <h3>Introduction</h3>
+                <p>The Data Structures and Algorithms (DSA) course has been a transformative journey in understanding the fundamental building blocks of computational problem-solving. Throughout the course, I gained a deeper appreciation for the critical role that well-designed data structures and efficient algorithms play in developing scalable, efficient, and robust software solutions.This course has greatly expanded my knowledge and skills.</p>
+            
+                <h4><strong>Topics Covered</strong></h4>
+                <div class="topics-container">
+                    <div class="column">
+                        <table border="1" cellspacing="0" cellpadding="10" style="margin: 0 auto;">
+                            <thead>
+                                <tr>
+                                    <th>Category</th>
+                                    <th>Algorithms/Structures</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Linear and Non Linear Data Structures</strong></td>
+                                    <td>
+                                        <ul>
+                                            <li>Arrays</li>
+                                            <li>Linked List</li>
+                                            <li>Stacks and Queues</li>
+                                            <li>Trees:</li>
+                                            <ul>
+                                                <li>Binary Trees</li>
+                                                <li>2-3 Trees</li>
+                                                <li>Lookup Table</li>
+                                                <li>Tries</li>
+                                                <li>AVL Trees</li>
+                                                <li>Red-Black Trees</li>
+                                                <li>Skip Lists</li>
+                                                <li>Segment Trees</li>
+                                            </ul>
+                                            <li>Graphs (Weighted/Unweighted, Directed/Undirected)</li>
+                                            <li>Heaps</li>
+                                            <li>HashMaps</li>
+                                            <li>Union-Find (Disjoint Set Union)</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Sorting Algorithms</strong></td>
+                                    <td>
+                                        <ul>
+                                            <li>Bubble Sort</li>
+                                            <li>Insertion Sort</li>
+                                            <li>Selection Sort</li>
+                                            <li>Merge Sort</li>
+                                            <li>Quick Sort</li>
+                                            <li>Heap Sort</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>String Matching Algorithms</strong></td>
+                                    <td>
+                                        <ul>
+                                            <li>Brute Force</li>
+                                            <li>Boyer-Moore</li>
+                                            <li>KMP</li>
+                                            <li>Rabin-Karp</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Graph Algorithms</strong></td>
+                                    <td>
+                                        <ul>
+                                            <li>Breadth-First Search (BFS)</li>
+                                            <li>Depth-First Search (DFS)</li>
+                                            <li>Kruskal's Algorithm</li>
+                                            <li>Dijkstra's Algorithm</li>
+                                            <li>Bellman-Ford Algorithm</li>
+                                            <li>Floyd-Warshall Algorithm</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Backtracking Algorithms</strong></td>
+                                    <td>
+                                        <ul>
+                                            <li>N-Queen Problem</li>
+                                            <li>Subset Generation</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div> 
+                </div>
+            </div>
+            <div id="real-time-examples">
+                <h3>Real-Time Examples</h3>
+                <div class="topics-real"></div>
+                <p><strong>DFS:</strong> DFS can be used to navigate through a maze. Starting from the entrance, DFS explores as far as possible along each branch before backtracking. This method ensures that all possible paths are explored until the exit is found.</p>
+                <p><strong>BFS:</strong> BFS can be used to find the shortest path between two users in a social network. Starting from a user, BFS explores all immediate connections (friends) before moving on to their connections (friends of friends), and so on.</p>
+                <p><strong>Heap:</strong> Used in priority queues for task scheduling in operating systems, ensuring high-priority tasks are executed first.</p>
+                <p><strong>BST:</strong> Employed in database indexing to allow efficient searching, insertion, and deletion of records.</p>
+            </div>
+        </section>
+					</p>
+         </div>
+        </div>
+
+		<div class="row">
+			<h1 class="big-4">Team information</h1>
+			<div class="underline"></div>
+		</div>
+		<br>
+		
+		<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1e1e1e;
+            color: white;
+        }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: #2e2e2e;
+        }
+        th, td {
+            padding: 12px 15px;
+            border: 1px solid #444;
+            text-align: left;
+        }
+        th {
+            background-color: #444;
+            font-weight: bold;
+        }
+        tr:nth-child(even) {
+            background-color: #3e3e3e;
+        }
+        tr:hover {
+            background-color: #555;
+        }
+        .nav-bar {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        .nav-bar a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            padding: 10px;
+            background-color: #444;
+            border-radius: 5px;
+        }
+        .nav-bar a:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-bar">
+        
+    </div>
+    <table>
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>Roll No</th>
+                <th>USN</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>419</td>
+                <td>01FE23BCS300</td>
+                <td><a href="https://rashmimallayya.github.io/daa-portofilo.github/"target="_self">Rashmi Mathapati</a></td>
+
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>448</td>
+                <td>01FE23BCS301</td>
+                <td><a href="https://github.com/sahana1808/DAA_Portfolio.git"target="_self">Sahana B Sulegavi</a></td>
+
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>446</td>
+                <td>01FE23BCS282</td>
+                <td><a href="https://github.com/GeetaBiradar63/geeta_portfolio.github.io"target="_self">Gurulingamma V Biradar</a></td>
+
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>431</td>
+                <td>01FE23BCS198</td>
+                <td>Shrutika Ambure</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
+		<div class="row">
+			<h1 class="big-4">Course Overview</h1>
+			<div class="underline"></div>
+		</div>
+		<br>
+		<p>Introduction:Ahmad nagar is a new smart city being planned for an area of 1500 square kilometres. The design suggests a balance between functionality, accessibility, and sustainability.This smart city has a special pollution control system to promote sustainability and improved human health.</p>
+		<h3>Land Distribution Table</h3>
+		<table>
+			<thead>
+				<tr>
+					<th>Zone</th>
+					<th>Description</th>
+					<th>Number of Buildings/Facilities</th>
+					<th>Details</th>
+				</tr>
+				<tr>
+					<td>1</td>
+					<td>Residential Zone</td>
+					<td>27</td>
+					<td>
+						<ul>
+							<li>Apartment buildings</li>
+							<li>Single-family homes</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Commercial Zone</td>
+					<td>16</td>
+					<td>
+						<ul>
+							<li>Office buildings</li>
+							<li>Shopping malls</li>
+							<li>Restaurants</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>Educational Zone</td>
+					<td>5</td>
+					<td>
+						<ul>
+							<li>Schools</li>
+							<li>Colleges</li>
+							<li>University</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td>4</td>
+					<td>Industrial Zone</td>
+					<td>3</td>
+					<td>
+						<ul>
+							<li>Factories</li>
+							<li>Warehouses</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td>5</td>
+					<td>Healthcare Zone</td>
+					<td>2</td>
+					<td>
+						<ul>
+							<li>Hospitals</li>
+							<li>Clinics</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td>6</td>
+					<td>Green Spaces</td>
+					<td>4</td>
+					<td>
+						<ul>
+							<li>Parks</li>
+							<li>Gardens</li>
+							<li>Forest</li>
+							<li>Bird Sanctuary</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td>7</td>
+					<td>Recreational and Cultural Spaces</td>
+					<td>3</td>
+					<td>
+						<ul>
+							<li>Cultural Centers</li>
+							<li>Sports Complexes</li>
+							<li>Theaters</li>
+							<li>Libraries</li>
+						</ul>
+					</td>
+				</tr>
+				<tr>
+					<td>8</td>
+					<td>Transportation Infrastructure</td>
+					<td>11</td>
+					<td>
+						<ul>
+							<li>Roads, Bike Lanes, Pedestrian Walkways, and Parking Spaces</li>
+							<li>Smart Public Transport Hubs (Airport, Railway) and Electric Vehicle Charging Stations</li>
+							<li>Toll Plaza</li>
+						</ul>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</section>
+    			</div>
+    		</div>
+    	</div>
+    </section>
+	<section class="Bussiness Model-section">
+		<div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
+			<div class="row justify-content-start pb-3">
+				<div class="col-md-12 heading-section ftco-animate">
+					<h1 class="big">Bussiness model</h1>
+					<h2 class="mb-4">Bussiness Model</h2>
+					<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Ideas Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        caption {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+		
+        <caption>AHMAD NAGAR</caption>
+        <thead>
+            <tr>
+                <th>SL.NO.</th>
+                <th>Business Idea Identified</th>
+                <th>Description</th>
+                <th>Owner</th>
+                <th>Problem Tools</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1.</td>
+                <td>Air Pollution Management</td>
+                <td>Develop affordable, AI-powered air purifiers for households and offices that provide real-time air quality monitoring and filtration.</td>
+                <td>ABC</td>
+                <td>Graphs, DFS, BFS</td>
+            </tr>
+            <tr>
+                <td>2.</td>
+                <td>Plastic Waste Reduction</td>
+                <td>Create a subscription-based service offering reusable, biodegradable packaging solutions for businesses and individuals.</td>
+                <td>PQRS</td>
+                <td>Hashing, Greedy algorithm</td>
+            </tr>
+            <tr>
+                <td>3.</td>
+                <td>Industrial Emissions Tracking</td>
+                <td>Develop a blockchain-based platform for tracking and reporting industrial carbon and pollutant emissions.</td>
+                <td>XYZ</td>
+                <td>Sorting, Hashing</td>
+            </tr>
+            <tr>
+                <td>4.</td>
+                <td>Agricultural Runoff Solutions</td>
+                <td>Design eco-friendly, organic alternatives to traditional fertilizers and pesticides, ensuring reduced environmental impact.</td>
+                <td>EFG</td>
+                <td>Dynamic programming</td>
+            </tr>
+            <tr>
+                <td>5.</td>
+                <td>E-Waste Recycling</td>
+                <td>Create a platform for collecting, refurbishing, and reselling e-waste or extracting valuable materials.</td>
+                <td>123</td>
+                <td>Queues</td>
+            </tr>
+            <tr>
+                <td>6.</td>
+                <td>Water Pollution Monitoring</td>
+                <td>Offer IoT-based water quality monitoring systems to industries, municipalities, and agricultural sectors.</td>
+                <td>XXX</td>
+                <td>Heap, Dijkstra's algorithm</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .portfolio-existing {
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        .portfolio-existing h1 {
+            font-size: 24px;
+            color: #333;
+        }
+        .portfolio-existing p {
+            font-size: 16px;
+            color: #555;
+        }
+        .portfolio-new-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            width: 100vw; /* Full screen width */
+            height: 100vh; /* Full screen height */
+            padding: 20px;
+            background: #ffffff;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            overflow: auto; /* Handle content overflow */
+        }
+        .portfolio-new-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .portfolio-new-header h1 {
+            font-size: 28px;
+            color: #2c3e50;
+        }
+        .portfolio-new-content {
+            line-height: 1.6;
+            flex-grow: 1; /* Push the footer to the bottom */
+            width: 100%;
+        }
+        .portfolio-new-section {
+            margin-bottom: 20px;
+            width: 90%; /* Adjust width for better readability */
+            margin: 0 auto;
+        }
+        .portfolio-new-section h2 {
+            font-size: 22px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        .portfolio-new-section p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+        .portfolio-new-section ul {
+            margin: 10px 0;
+            padding-left: 20px;
+        }
+        .portfolio-new-section ul li {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 5px;
+        }
+        .portfolio-new-footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <!-- Existing Content -->
+    <div class="portfolio-existing">
+        <h1>the selected bussiness idea is</h1>
+        <!-- <p>This is your existing portfolio content that remains unaffected by the new ad.</p> -->
+    </div>
+
+    <!-- New Content: Agricultural Runoff Solution -->
+    <div class="portfolio-new-container">
+        <div class="portfolio-new-header">
+            <h1>Agricultural Runoff Solution</h1>
+        </div>
+        <div class="portfolio-new-content">
+            <div class="portfolio-new-section">
+                <h2>Dynamic Programming (DP) Applications</h2>
+                <p>
+                    Dynamic Programming (DP) techniques are useful for solving agricultural runoff and eco-friendly 
+                    fertilizer/pesticide design problems where decisions must be made sequentially under constraints. 
+                    The following DP approaches are particularly relevant:
+                </p>
+            </div>
+            <div class="portfolio-new-section">
+                <h2>Example Application</h2>
+                <p><strong>Problem:</strong> Optimize the amount and timing of organic fertilizer application to maximize 
+                crop yield while minimizing nutrient runoff.</p>
+                <p><strong>Approach:</strong> Use a time-dependent DP model with the Bellman equation to decide the best 
+                fertilization schedule for each crop growth stage, considering constraints like soil saturation and 
+                weather forecasts.</p>
+                <p>
+                    Dynamic programming provides a structured way to address the complexity and sequential nature of 
+                    these problems in eco-friendly agricultural practices.
+                </p>
+            </div>
+            <div class="portfolio-new-section">
+                <h2>Key DP Techniques</h2>
+                <ul>
+                    <li>
+                        <strong>Multi-Stage Decision Processes</strong><br>
+                        <strong>Bellman Equation:</strong> Used for optimizing sequential decisions where outcomes at one stage 
+                        influence the next (e.g., soil nutrient levels affecting the next application).<br>
+                        <strong>Example:</strong> Managing crop rotation and organic input application over years to minimize 
+                        environmental impact.
+                    </li>
+                    <li>
+                        <strong>Resource Allocation Problems</strong><br>
+                        <strong>Knapsack Problem Variants:</strong> Used to optimize the allocation of limited resources (e.g., 
+                        organic fertilizers) across multiple fields while minimizing environmental impact.<br>
+                        <strong>Example:</strong> Deciding the amount of fertilizer for each crop to maximize yield while staying 
+                        within runoff limits.
+                    </li>
+                    <li>
+                        <strong>Time-Dependent Models</strong><br>
+                        <strong>Stage-Based DP (Finite Horizon):</strong> Models decisions over multiple growth stages of crops 
+                        to optimize yields and reduce runoff.<br>
+                        <strong>Example:</strong> Choosing the best organic fertilizer application schedule across a growing 
+                        season.
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="portfolio-new-footer">
+            &copy; 2024 Agricultural Runoff Solution Portfolio
+        </div>
+
+    </div>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Value Iteration Example</title>
+</head>
+<body>
+
+    <h1>Value Iteration Algorithm for Crop Optimization</h1>
+
+    <pre><code>
+# Inputs
+T = Total time horizon
+S = State space (soil nutrient levels: low, medium, high)
+A = Action space (crop types and organic input levels)
+R(s, a) = Reward function for state s and action a
+P(s' | s, a) = Transition probabilities
+gamma = Discount factor
+
+# Initialize value functions and policy
+V = {t: {s: 0 for s in S} for t in range(T+1)}  # Value functions
+policy = {t: {s: None for s in S} for t in range(T)}  # Optimal policies
+
+# Backward induction
+for t in range(T-1, -1, -1):  # Loop backward from T-1 to 0
+    for s in S:  # For each state
+        max_value = float('-inf')  # Initialize max value
+        best_action = None  # Initialize best action
+        for a in A:  # For each action
+            expected_value = R(s, a) + gamma * sum(
+                P(s_next | s, a) * V[t+1][s_next] for s_next in S
+            )
+            if expected_value > max_value:  # Check if new maximum is found
+                max_value = expected_value
+                best_action = a
+        V[t][s] = max_value  # Store max value
+        policy[t][s] = best_action  # Store best action
+
+# Extract optimal policy
+optimal_policy = []
+current_state = initial_state
+for t in range(T):
+    optimal_policy.append(policy[t][current_state])
+    current_state = next_state_based_on(current_state, optimal_policy[-1])
+
+# Output
+return optimal_policy.
+    </code></pre>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SDGs Related to Agricultural Runoff Solutions</title>
+</head>
+<body>
+
+    <h1>SDGs Related to Agricultural Runoff Solutions</h1>
+
+    <ul>
+        <li>SDG 2: Zero Hunger</li>
+        <li>SDG 3: Good Health and Well-Being</li>
+        <li>SDG 6: Clean Water and Sanitation</li>
+        <li>SDG 12: Responsible Consumption and Production</li>
+        <li>SDG 13: Climate Action</li>
+        <li>SDG 14: Life Below Water</li>
+        <li>SDG 15: Life on Land</li>
+    </ul>
+
+</body>
+</html>
+
+	
+					
+	
+    <section class="project-reflections-section">
+		<div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
+			<div class="row justify-content-start pb-3">
+				<div class="col-md-12 heading-section ftco-animate">
+					<h1 class="big">Project Reflections</h1>
+					<h2 class="mb-4">Project Reflections</h2>
+	
+		<p>Sustainability, Environmental Conservation, and Human Health"Throughout my projects this semester, I have focused on integrating sustainable practices, promoting environmental conservation, and improving human health. These projects have allowed me to explore innovative solutions that contribute to reducing the carbon footprint, conserving natural resources, and enhancing the quality of life for individuals. The projects are a reflection of my commitment to sustainability, and they provide practical applications that can make a difference in our world."</p>
+<p>Focus on eco-friendly practices and technologiesDeveloped solutions that reduce waste and energy consumption Emphasized health and wellness through project design Incorporated strategies for long-term environmental impact Worked on real-world applications for sustainability in urban planning</p>
+						
+					</ul>
+				</div>
+			</div>
+	
+			<div class="text">
+				<p class="mb-4">
+					<span class="number" data-number="10">0</span> <span>+</span>
+					<span>&nbsp; Projects focused on sustainability and health</span>
+				</p>
+			</div>
+		</div>
+	</section>
+	
+
+	  
+	 
+	 
+	 
+	
+
+			<footer class="ftco-footer ftco-section">
+				<div class="container">
+				  <div class="row">
+					<div class="col-md-12 text-center">
+		  
+					  <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+			Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+			<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+					</div>
+				  </div>
+				</div>
+			  </footer>
+			<div class="text">
+				<p class="mb-4">
+					<span class="number" data-number="10">0</span> <span>+</span>
+					<span>&nbsp; Projects focused on sustainability and health</span>
+				</p>
+				
+		</div>
+	</section>
+	
+
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/jquery.waypoints.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/jquery.animateNumber.min.js"></script>
+  <script src="js/scrollax.min.js"></script>
+  
+  <script src="js/main.js"></script>
+    
+  </body>
+</html>
