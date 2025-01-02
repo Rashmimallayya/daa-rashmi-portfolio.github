@@ -518,7 +518,7 @@
                 <td>4</td>
                 <td>431</td>
                 <td>01FE23BCS198</td>
-                <td>Shrutika Ambure</td>
+                <td><a href="https://shrutikaambure.github.io/DAA_1/"</a></td>
             </tr>
         </tbody>
     </table>
@@ -899,42 +899,69 @@
     <h1>Value Iteration Algorithm for Crop Optimization</h1>
 
     <pre><code>
-# Inputs
-T = Total time horizon
-S = State space (soil nutrient levels: low, medium, high)
-A = Action space (crop types and organic input levels)
-R(s, a) = Reward function for state s and action a
-P(s' | s, a) = Transition probabilities
-gamma = Discount factor
+#include <iostream>
+#include <vector>
+#include <algorithm>
+#include <limits>
 
-# Initialize value functions and policy
-V = {t: {s: 0 for s in S} for t in range(T+1)}  # Value functions
-policy = {t: {s: None for s in S} for t in range(T)}  # Optimal policies
+// Constants for the problem
+const int NUM_STAGES = 5;  // Number of crop growth stages
+const int MAX_FERTILIZER = 100; // Maximum amount of fertilizer in units
+const int MAX_SOIL_CAPACITY = 50; // Maximum soil nutrient saturation level
+const double WEATHER_IMPACT[] = {1.0, 0.8, 1.2, 1.0, 0.9}; // Weather impact on fertilizer efficiency per stage
 
-# Backward induction
-for t in range(T-1, -1, -1):  # Loop backward from T-1 to 0
-    for s in S:  # For each state
-        max_value = float('-inf')  # Initialize max value
-        best_action = None  # Initialize best action
-        for a in A:  # For each action
-            expected_value = R(s, a) + gamma * sum(
-                P(s_next | s, a) * V[t+1][s_next] for s_next in S
-            )
-            if expected_value > max_value:  # Check if new maximum is found
-                max_value = expected_value
-                best_action = a
-        V[t][s] = max_value  # Store max value
-        policy[t][s] = best_action  # Store best action
+// Crop yield function based on fertilizer applied and weather impact
+double calculateYield(int fertilizer, double weatherImpact) {
+    return fertilizer * weatherImpact - 0.01 * fertilizer * fertilizer; // Hypothetical yield function
+}
 
-# Extract optimal policy
-optimal_policy = []
-current_state = initial_state
-for t in range(T):
-    optimal_policy.append(policy[t][current_state])
-    current_state = next_state_based_on(current_state, optimal_policy[-1])
+// Function to calculate runoff cost based on soil saturation
+double calculateRunoffCost(int soilSaturation) {
+    return soilSaturation > MAX_SOIL_CAPACITY ? (soilSaturation - MAX_SOIL_CAPACITY) * 2.0 : 0.0;
+}
 
-# Output
-return optimal_policy.
+int main() {
+    // DP table: dp[stage][soilSaturation]
+    std::vector<std::vector<double>> dp(NUM_STAGES + 1, std::vector<double>(MAX_SOIL_CAPACITY + 1, 0.0));
+
+    // Backtracking table to store optimal decisions
+    std::vector<std::vector<int>> decision(NUM_STAGES, std::vector<int>(MAX_SOIL_CAPACITY + 1, 0));
+
+    // Solve the DP table
+    for (int stage = NUM_STAGES - 1; stage >= 0; --stage) {
+        for (int soilSaturation = 0; soilSaturation <= MAX_SOIL_CAPACITY; ++soilSaturation) {
+            double maxProfit = -std::numeric_limits<double>::infinity();
+            int bestFertilizer = 0;
+
+            for (int fertilizer = 0; fertilizer <= MAX_FERTILIZER; ++fertilizer) {
+                int newSoilSaturation = soilSaturation + fertilizer;
+                double yield = calculateYield(fertilizer, WEATHER_IMPACT[stage]);
+                double runoffCost = calculateRunoffCost(newSoilSaturation);
+                double profit = yield - runoffCost + dp[stage + 1][std::min(newSoilSaturation, MAX_SOIL_CAPACITY)];
+
+                if (profit > maxProfit) {
+                    maxProfit = profit;
+                    bestFertilizer = fertilizer;
+                }
+            }
+
+            dp[stage][soilSaturation] = maxProfit;
+            decision[stage][soilSaturation] = bestFertilizer;
+        }
+    }
+
+    // Output results
+    std::cout << "Optimal Fertilization Schedule:" << std::endl;
+    int soilSaturation = 0;
+    for (int stage = 0; stage < NUM_STAGES; ++stage) {
+        int fertilizer = decision[stage][soilSaturation];
+        std::cout << "Stage " << stage + 1 << ": Apply " << fertilizer << " units of fertilizer" << std::endl;
+        soilSaturation = std::min(soilSaturation + fertilizer, MAX_SOIL_CAPACITY);
+    }
+
+    std::cout << "Maximum Profit: " << dp[0][0] << std::endl;
+    return 0;
+}
     </code></pre>
 
 </body>
