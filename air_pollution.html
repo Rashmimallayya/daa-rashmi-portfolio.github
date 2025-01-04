@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Pollution Management System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #060607;
+            color: #fff6f6;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #060606;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #1056bf;
+            font-size: 4em;
+        }
+        h2 {
+            text-align: left;
+            color: #3d8bd8;
+            font-size: 2em;
+        }
+        h3 {
+            text-align: left;
+            color: #2684e3;
+            font-size: 2em;
+        }
+        h4 {
+            text-align: center;
+            color: #1a98c6;
+            font-size: 2em;
+        }
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+        pre {
+            background: #272424;
+            border-left: 5px solid #3498db;
+            padding: 15px;
+            overflow-x: auto;
+        }
+        .sdg-list {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .sdg {
+            background: #272424;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Air Pollution Management</h1>
+        
+        <h2>Description</h2>
+        <p>The business idea focuses on developing affordable, AI-powered air purifiers for households and offices. These devices offer real-time air quality monitoring and filtration, providing a solution to air pollution problems.</p>
+
+        <h2>Techniques Used</h2>
+        <ul>
+            <li><strong>BST:</strong> To efficiently store and retrieve pollutant levels for monitoring trends over time.</li>
+            <li><strong>Graph:</strong> To model the airflow network within the purifier or represent sensor nodes and connections in a smart home environment.</li>
+        </ul>
+
+        <h2>Pseudocode</h2>
+
+        <h3>BST (Insertion and Deletion)</h3>
+        <pre><code>
+    #include &lt;iostream&gt;
+    #include &lt;string&gt;
+    using namespace std;
+            
+            // Structure to represent a node in the BST
+    struct AirPurifier {
+    int purifierID;
+    string location;
+    float airQualityIndex;
+    AirPurifier* left;
+    AirPurifier* right;
+
+    AirPurifier(int id, string loc, float aqi) {
+        purifierID = id;
+        location = loc;
+        airQualityIndex = aqi;
+        left = nullptr;
+        right = nullptr;
+    }
+};
+
+// Class to represent the BST
+class AirPurifierBST {
+private:
+    AirPurifier* root;
+
+    AirPurifier* insert(AirPurifier* node, int id, string loc, float aqi) {
+        if (node == nullptr) {
+            return new AirPurifier(id, loc, aqi);
+        }
+        if (id < node->purifierID) {
+            node->left = insert(node->left, id, loc, aqi);
+        } else if (id > node->purifierID) {
+            node->right = insert(node->right, id, loc, aqi);
+        }
+        return node;
+    }
+
+    AirPurifier* search(AirPurifier* node, int id) {
+        if (node == nullptr || node->purifierID == id) {
+            return node;
+        }
+        if (id < node->purifierID) {
+            return search(node->left, id);
+        }
+        return search(node->right, id);
+    }
+
+    void inOrder(AirPurifier* node) {
+        if (node != nullptr) {
+            inOrder(node->left);
+            cout << "Purifier ID: " << node->purifierID
+                 << ", Location: " << node->location
+                 << ", AQI: " << node->airQualityIndex << endl;
+            inOrder(node->right);
+        }
+    }
+
+    AirPurifier* findMin(AirPurifier* node) {
+        while (node && node->left != nullptr) {
+            node = node->left;
+        }
+        return node;
+    }
+
+    AirPurifier* remove(AirPurifier* node, int id) {
+        if (node == nullptr) return node;
+
+        if (id < node->purifierID) {
+            node->left = remove(node->left, id);
+        } else if (id > node->purifierID) {
+            node->right = remove(node->right, id);
+        } else {
+            if (node->left == nullptr) {
+                AirPurifier* temp = node->right;
+                delete node;
+                return temp;
+            } else if (node->right == nullptr) {
+                AirPurifier* temp = node->left;
+                delete node;
+                return temp;
+            }
+            AirPurifier* temp = findMin(node->right);
+            node->purifierID = temp->purifierID;
+            node->location = temp->location;
+            node->airQualityIndex = temp->airQualityIndex;
+            node->right = remove(node->right, temp->purifierID);
+        }
+        return node;
+    }
+
+public:
+    AirPurifierBST() { root = nullptr; }
+
+    void insert(int id, string loc, float aqi) {
+        root = insert(root, id, loc, aqi);
+    }
+
+    void search(int id) {
+        AirPurifier* result = search(root, id);
+        if (result) {
+            cout << "Found Purifier - ID: " << result->purifierID
+                 << ", Location: " << result->location
+                 << ", AQI: " << result->airQualityIndex << endl;
+        } else {
+            cout << "Purifier with ID " << id << " not found." << endl;
+        }
+    }
+
+    void remove(int id) {
+        root = remove(root, id);
+        cout << "Purifier with ID " << id << " removed (if it existed)." << endl;
+    }
+
+    void display() {
+        cout << "Air Purifier Records (Sorted by ID):" << endl;
+        inOrder(root);
+    }
+};
+
+int main() {
+    AirPurifierBST bst;
+    int choice;
+    do {
+        cout << "\n1. Insert\n2. Search\n3. Delete\n4. Display\n5. Exit\nEnter your choice: ";
+        cin >> choice;
+
+        if (choice == 1) {
+            int id;
+            string location;
+            float aqi;
+            cout << "Enter Purifier ID, Location, and AQI: ";
+            cin >> id;
+            cin.ignore();
+            getline(cin, location);
+            cin >> aqi;
+            bst.insert(id, location, aqi);
+        } else if (choice == 2) {
+            int id;
+            cout << "Enter Purifier ID to search: ";
+            cin >> id;
+            bst.search(id);
+        } else if (choice == 3) {
+            int id;
+            cout << "Enter Purifier ID to delete: ";
+            cin >> id;
+            bst.remove(id);
+        } else if (choice == 4) {
+            bst.display();
+        }
+    } while (choice != 5);
+
+    cout << "Program terminated." << endl;
+    return 0;
+}
+//sample input and output
+1. Insert
+2. Search
+3. Delete
+4. Display
+5. Exit
+Enter your choice: 1
+Enter Purifier ID, Location, and AQI: 101
+Office
+42.5
+
+1. Insert
+2. Search
+3. Delete
+4. Display
+5. Exit
+Enter your choice: 1
+Enter Purifier ID, Location, and AQI: 202
+Living Room
+35.7
+
+1. Insert
+2. Search
+3. Delete
+4. Display
+5. Exit
+Enter your choice: 1
+Enter Purifier ID, Location, and AQI: 303
+Bedroom
+50.2
+
+1. Insert
+2. Search
+3. Delete
+4. Display
+5. Exit
+Enter your choice: 1
+Enter Purifier ID, Location, and AQI: 404
+Kitchen
+65.3
+
+1. Insert
+2. Search
+3. Delete
+4. Display
+5. Exit
+Enter your choice: 2
+Enter Purifier ID to search: 202
+Found Purifier - ID: 202, Location: Living Room, AQI: 35.7
+
+1. Insert
+2. Search
+3. Delete
+4. Display
+5. Exit
+Enter your choice: 99
+
+1. Insert
+2. Search
+3. Delete
+4. Display
+5. Exit
+Enter your choice: 2
+Enter Purifier ID to search: 99
+Purifier with ID 99 not found.
+
+1. Insert
+2. Search
+3. Delete
+4. Display
+5. Exit
+Enter your choice: 3
+Enter Purifier ID to delete: 202
+Purifier with ID 202 removed (if it existed).
+
+1. Insert
+2. Search
+3. Delete
+4. Display
+5. Exit
+Enter your choice: 4
+Air Purifier Records (Sorted by ID):
+Purifier ID: 101, Location: Office, AQI: 42.5
+Purifier ID: 303, Location: Bedroom, AQI: 50.2
+Purifier ID: 404, Location: Kitchen, AQI: 65.3
+
+1. Insert
+2. Search
+3. Delete
+4. Display
+5. Exit
+Enter your choice: 5
+Program terminated.
+
+Process returned 0 (0x0)   execution time : 174.357 s
+Press any key to continue.
+
+
+</code></pre>
+
+        <h3>Graph (Dijkstra's Algorithm)</h3>
+        <pre><code>
+#include <iostream>
+#include <vector>
+#include <queue>
+#include <climits> // For INT_MAX
+using namespace std;
+
+// Pair to represent (cost, vertex)
+typedef pair<int, int> pii;
+
+// Class to represent the graph
+class AirPurifierGraph {
+private:
+    int numStations;                          // Number of nodes (air purifiers/stations)
+    vector<vector<pii>> adjList;              // Adjacency list: adjList[u] = {(v, weight), ...}
+
+public:
+    // Constructor
+    AirPurifierGraph(int n) {
+        numStations = n;
+        adjList.resize(n);
+    }
+
+    // Function to add an edge between two stations
+    void addEdge(int u, int v, int weight) {
+        adjList[u].push_back({v, weight});    // Directed edge from u to v
+        adjList[v].push_back({u, weight});    // Undirected edge (if applicable)
+    }
+
+    // Function to run Dijkstra's algorithm
+    void dijkstra(int startNode) {
+        vector<int> dist(numStations, INT_MAX);    // Distance from startNode to each node
+        priority_queue<pii, vector<pii>, greater<pii>> pq; // Min-heap to store (cost, vertex)
+
+        // Start from the startNode
+        dist[startNode] = 0;
+        pq.push({0, startNode});
+
+        while (!pq.empty()) {
+            int currentCost = pq.top().first;
+            int currentNode = pq.top().second;
+            pq.pop();
+
+            // Traverse neighbors of the current node
+            for (auto neighbor : adjList[currentNode]) {
+                int nextNode = neighbor.first;
+                int edgeWeight = neighbor.second;
+
+                // Relax the edge
+                if (dist[currentNode] + edgeWeight < dist[nextNode]) {
+                    dist[nextNode] = dist[currentNode] + edgeWeight;
+                    pq.push({dist[nextNode], nextNode});
+                }
+            }
+        }
+
+        // Print the shortest distances from startNode
+        cout << "Shortest distances from node " << startNode << " to all other nodes:" << endl;
+        for (int i = 0; i < numStations; i++) {
+            if (dist[i] == INT_MAX) {
+                cout << "Node " << i << ": Unreachable" << endl;
+            } else {
+                cout << "Node " << i << ": " << dist[i] << endl;
+            }
+        }
+    }
+};
+
+// Main Function
+int main() {
+    int numStations, numEdges;
+
+    // Input the number of stations (nodes)
+    cout << "Enter the number of stations: ";
+    cin >> numStations;
+
+    // Create the graph
+    AirPurifierGraph graph(numStations);
+
+    // Input the number of edges
+    cout << "Enter the number of edges: ";
+    cin >> numEdges;
+
+    cout << "Enter the edges (format: station1 station2 weight):" << endl;
+    for (int i = 0; i < numEdges; i++) {
+        int u, v, weight;
+        cin >> u >> v >> weight;
+        graph.addEdge(u, v, weight);
+    }
+
+    // Input the starting node
+    int startNode;
+    cout << "Enter the starting station: ";
+    cin >> startNode;
+
+    // Run Dijkstra's algorithm
+    graph.dijkstra(startNode);
+
+    return 0;
+}
+
+//sample input and output
+Enter the number of stations: 5
+Enter the number of edges: 6
+Enter the edges (format: station1 station2 weight):
+0 1 10
+0 2 5
+1 2 2
+1 3 1
+2 3 9
+3 4 4
+Enter the starting station: 0
+Shortest distances from node 0 to all other nodes:
+Node 0: 0
+Node 1: 7
+Node 2: 5
+Node 3: 8
+Node 4: 12
+
+Process returned 0 (0x0)   execution time : 37.188 s
+Press any key to continue.
+                                    
+
+</code></pre>
+
+        <h4>SDGs Addressed</h4>
+        <div class="sdg-list">
+            <div class="sdg">
+                <strong>SDG 3:</strong> Good Health and Well-being
+            </div>
+            <div class="sdg">
+                <strong>SDG 11:</strong> Sustainable Cities and Communities
+            </div>
+        </div>
+    </div>
+</body>
+</html>
